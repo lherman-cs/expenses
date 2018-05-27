@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-card-title>Add Expense</mat-card-title>
+  <form (ngSubmit)="addExpense()">
+    <mat-grid-list cols="2" rowHeight="4:1" gutterSize="10px">
+      <mat-grid-tile>
+        <mat-form-field (click)="picker.open()">
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="expense.date" name="date">
+          <mat-icon matSuffix>date_range</mat-icon>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field>
+          <input matInput placeholder="Location" [(ngModel)]="expense.location" name="location">
+          <mat-icon matSuffix>location_on</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan="2">
+        <mat-form-field>
+          <textarea matInput placeholder="Leave a description" [(ngModel)]="expense.description" name="description"></textarea>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan="2">
+        <mat-form-field>
+          <input matInput placeholder="Amount" type="number" [(ngModel)]="expense.amount" name="amount">
+          <mat-icon matPrefix>attach_money</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan="2">
+        <button mat-raised-button color="primary">Submit</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form>
+</mat-card>
