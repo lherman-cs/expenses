@@ -7,7 +7,7 @@ import {
 import { MatSnackBar } from "@angular/material";
 
 @Component({
-  selector: "expenses-detail-form",
+  selector: "detail-form",
   templateUrl: "./form.component.html",
   styleUrls: ["./form.component.scss"]
 })
@@ -15,10 +15,7 @@ export class FormComponent implements OnInit {
   private expensesCollection: AngularFirestoreCollection<Expense>;
   expense: Expense;
 
-  constructor(private db: AngularFirestore, private snackBar: MatSnackBar) {
-    this.expensesCollection = db.collection("expenses");
-    this.reset();
-  }
+  constructor(private db: AngularFirestore, private snackBar: MatSnackBar) {}
   addExpense() {
     this.expensesCollection.add(this.expense);
     this.snackBar.open("Submitted!");
@@ -34,5 +31,8 @@ export class FormComponent implements OnInit {
     };
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.expensesCollection = this.db.collection("expenses");
+    this.reset();
+  }
 }

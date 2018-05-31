@@ -29,11 +29,14 @@ import {
   MatSnackBarModule
 } from "@angular/material";
 import { LayoutModule } from "@angular/cdk/layout";
-import { TableComponent } from "./detail/table/table.component";
-import { DetailComponent } from "./detail/detail.component";
-import { FormComponent } from "./detail/form/form.component";
-import { NavbarComponent } from "./navbar/navbar.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import { TableComponent } from "./components/detail/table/table.component";
+import { DetailComponent } from "./components/detail/detail.component";
+import { FormComponent } from "./components/detail/form/form.component";
+import { NavbarComponent } from "./components/navbar/navbar.component";
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { PiechartComponent } from './components/dashboard/piechart/piechart.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
     DetailComponent,
     FormComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    PiechartComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,9 +74,10 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
     MatSortModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgxChartsModule
   ],
-  entryComponents: [FormComponent],
+  entryComponents: [FormComponent, PiechartComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

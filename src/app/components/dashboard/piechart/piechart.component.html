@@ -1,0 +1,6 @@
+<!-- <ngx-charts-pie-chart [results]="data" [legend]="true" [explodeSlices]="false" [labels]="true" [doughnut]="false" [gradient]="false"> -->
+<!-- <ngx-charts-pie-chart [results]="data" [legend]="true" [gradient]="true" [doughnut]="true"> -->
+<div #parent>
+  <ngx-charts-advanced-pie-chart [view]="[parent.offsetWidth, parent.offsetHeight]" [results]="data" [gradient]="true" [scheme]="colorScheme">
+  </ngx-charts-advanced-pie-chart>
+</div>

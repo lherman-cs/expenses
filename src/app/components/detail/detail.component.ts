@@ -9,7 +9,7 @@ export interface Expense {
 }
 
 @Component({
-  selector: "expenses-detail",
+  selector: "detail",
   templateUrl: "./detail.component.html",
   styleUrls: ["./detail.component.scss"]
 })
