@@ -40,7 +40,7 @@ export class PiechartComponent implements OnInit {
           },
           {
             name: "Budget",
-            value: 5700 - sum
+            value: 3700 - sum
           }
         ];
       });
